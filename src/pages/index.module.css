@@ -1,0 +1,92 @@
+.main {
+    @apply grid grid-cols-5 gap-4 justify-start items-start py-8
+}
+
+.left {
+    @apply col-span-3 flex flex-col gap-y-6
+}
+
+.right {
+    @apply col-span-2 flex flex-col gap-y-6
+}
+
+.updateSection {
+    @apply rounded-base w-full py-6 px-6
+        grid grid-cols-10
+}
+
+.updateAvatar {
+    @apply col-span-1
+}
+
+.updatePost {
+    @apply col-span-9 flex flex-col justify-start items-start gap-y-4
+}
+
+.updateInput {
+    @apply rounded-base w-full bg-[#3D3F55] px-8 py-3
+}
+
+.updateTypes {
+    @apply flex flex-row gap-x-3 flex-wrap
+}
+
+.updateType {
+    @apply flex flex-row gap-x-2 px-4 py-2 rounded-base bg-[#3D3F55] text-[16px] cursor-pointer
+}
+
+/* Posts Section */
+.postsSection {
+    @apply flex flex-col gap-y-4 text-[16px]
+}
+
+.post {
+    @apply rounded-base pt-6 overflow-y-hidden
+}
+
+.postHeader {
+    @apply px-6 grid grid-cols-9 mb-6 gap-x-4
+}
+
+.postAvatar {
+    @apply min-h-[50px] min-w-[50px] h-auto w-full col-span-1
+}
+
+.postAuthor {
+    @apply flex flex-col gap-y-0 col-span-6
+}
+
+.postDate {
+    @apply text-[14px] text-[#B4B4B4] w-full
+}
+
+.postActions {
+    @apply flex flex-row justify-end items-start gap-x-2 col-span-2
+}
+
+.action {
+    @apply h-[32px] w-[32px] p-1 rounded-base bg-[#303248] text-[#6B6B6B] cursor-pointer
+        flex flex-col justify-center items-center
+}
+
+.postBody {
+    @apply flex flex-col justify-start items-start gap-y-4
+}
+
+.postText {
+    @apply text-[16px] font-[400] px-6
+}
+
+.postImage {
+    @apply bg-post bg-cover bg-center h-[400px] w-full
+}
+
+/* Polls Section */
+.pollsSection {
+    @apply flex flex-col gap-y-10 px-4 py-6 rounded-base
+}
+
+.pollsSection > p {
+    @apply font-semibold w-full
+}
+

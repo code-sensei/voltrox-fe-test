@@ -1,0 +1,3 @@
+.main {
+    @apply min-w-[300px] w-[300px] fixed h-screen px-6 py-8 flex flex-col justify-start items-start gap-y-32 bg-primary
+}

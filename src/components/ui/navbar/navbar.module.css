@@ -1,0 +1,37 @@
+.main {
+    @apply pb-8
+        flex flex-row justify-between items-center
+}
+
+.left {
+    @apply font-semibold
+}
+
+.right {
+    @apply flex flex-row justify-end items-center gap-x-4
+}
+
+.icon {
+    @apply flex flex-col justify-center items-center rounded-full border border-[#6A7294]
+        text-white h-[50px] w-[50px] bg-[#363A4D]
+}
+
+.icon svg {
+    @apply h-[25px] w-[25px]
+}
+
+.user {
+    @apply flex flex-row gap-x-3
+}
+
+.username {
+    @apply flex flex-col gap-y-0 justify-center items-start
+}
+
+.username small {
+    @apply text-xxs text-[#A0A0A0] 
+}
+
+.username p {
+    @apply text-lg
+}

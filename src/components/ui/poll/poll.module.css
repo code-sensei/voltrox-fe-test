@@ -1,0 +1,68 @@
+.main {
+    @apply bg-transparent w-full
+}
+
+.pollHeader {
+    @apply px-0 grid grid-cols-7 gap-x-4
+}
+
+.pollAvatar {
+    @apply min-h-[50px] min-w-[50px] h-auto w-full col-span-1
+}
+
+.pollAuthor {
+    @apply flex flex-col gap-y-0 col-span-6
+}
+
+.pollText {
+    @apply text-[14px] text-[#B4B4B4] w-full
+}
+
+.pollDate {
+    @apply text-[14px] text-[#B4B4B4] w-full
+}
+
+.pollBody {
+    @apply flex flex-col gap-y-4
+}
+
+.pollOptions {
+    @apply bg-[#3D3F55] rounded-base px-3 py-5 flex flex-col gap-y-2
+}
+
+.poll {
+    @apply w-full rounded-base
+}
+
+.pollOption {
+    @apply grid grid-cols-10 gap-x-2 px-4 py-2 rounded-base text-[16px] cursor-pointer
+}
+
+.pollOptionInput {
+    @apply hidden border-[#818181] h-[24px] w-[24px] col-span-1
+}
+
+.pollOptionText {
+    @apply flex flex-row gap-x-2 gap-y-0 col-span-9
+}
+
+.pollIndicator {
+    @apply h-[24px] w-[24px] rounded-full border-2 border-[#818181] bg-[#272A38] 
+        flex justify-center items-center
+}
+
+.pollIndicator.selected {
+    @apply border-[#31D8BD]
+}
+
+.pollOptionIndicator {
+    @apply h-[10px] w-[10px] rounded-full border-none bg-[#818181] 
+}
+
+.pollOptionIndicator.selected {
+    @apply bg-[#31D8BD]
+}
+
+.pollContent {
+    @apply w-full flex flex-col gap-y-1
+}

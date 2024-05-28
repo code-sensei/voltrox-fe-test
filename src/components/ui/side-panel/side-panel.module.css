@@ -1,0 +1,56 @@
+.sidePanel {
+    @apply p-4 bg-secondary h-full max-w-[700px] min-w-[500px] w-max
+        hidden top-0 right-0
+}
+
+.show {
+    @apply flex fixed
+}
+
+.sidePanelContent {
+    @apply flex flex-col justify-start items-start w-full
+}
+
+.sidePanelHeader { 
+    @apply flex flex-row justify-between items-center px-4 w-full mb-8
+}
+
+.closeIcon {
+    @apply h-[40px] w-[40px] flex flex-col justify-center items-center bg-[#303248] text-[#808080] rounded-full cursor-pointer
+}
+
+.sidePanelFilter {
+    @apply grid grid-cols-3 justify-center items-start gap-x-2 px-4 w-full mb-8
+}
+
+.sidePanelFilterItem {
+    @apply flex flex-row gap-x-1 justify-start items-center bg-[#404354] text-[#C8C8C8] border-none w-full col-span-1
+}
+
+.sidePanelFilterItem.input {
+    @apply col-span-2
+}
+
+.sidePanelPlayerList {
+    @apply flex flex-col justify-start items-start gap-4 w-full px-4
+}
+
+.playerItem {
+    @apply flex flex-row justify-between items-center w-full border-b-[.3px] border-b-[#7E8ABF] pb-4 cursor-pointer
+}
+
+.playerItemIcon {
+    @apply text-[#C8C8C8] h-[30px] w-[30px] flex flex-col justify-center items-center bg-[#303248] rounded-full
+}
+
+.playerItemIcon.selected {
+    @apply text-accent rotate-45
+}
+
+.sidePanelFooter {
+    @apply absolute bottom-10 left-10
+}
+
+.button {
+    @apply bg-accent text-primary
+}
