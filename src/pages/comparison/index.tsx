@@ -131,6 +131,15 @@ const ComparisonPage = () => {
     const [ selectedPlayers, setSelectedPlayers ] = useState<IPlayer[]>([Players[0]]);
     const [ showPanel, setShowPanel ] = useState<boolean>(false);
 
+    const playerSelected = (player: IPlayer) => {
+        const hasPlayer = selectedPlayers.find(p => p.name === player.name);
+        if (!hasPlayer) {
+            setSelectedPlayers([...selectedPlayers, player])
+        } else {
+            setSelectedPlayers(selectedPlayers.filter(p => p.name!== player.name))
+        }
+    }
+
     return (
         <>
             <main className={s.main}>
@@ -224,6 +233,8 @@ const ComparisonPage = () => {
                     show={ showPanel }
                     players={Players}
                     selected={selectedPlayers}
+                    onSelect={(player: IPlayer) => playerSelected(player)}
+                    onClose={() => setShowPanel(false)}
                 />
             </main>
         </>

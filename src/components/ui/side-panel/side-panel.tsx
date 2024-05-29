@@ -18,10 +18,11 @@ interface ISidePanel {
     show: boolean,
     players: IPlayer[],
     selected: IPlayer[],
-    setSelected?: void
+    onSelect: any
+    onClose: () => void
 }
 
-const SidePanel = ({ show, players, selected, setSelected }: ISidePanel) => {
+const SidePanel = ({ show, players, selected, onSelect, onClose }: ISidePanel) => {
 
     const [ showPanel, setShowPanel ] = useState<boolean>(show)
     const [ selectedPlayers, setSelectedPlayers ] = useState<IPlayer[]>(selected)
@@ -35,8 +36,13 @@ const SidePanel = ({ show, players, selected, setSelected }: ISidePanel) => {
         setSelectedPlayers([...selectedPlayers, player])
     }
 
-    const updateSelection = () => {
-        return selectedPlayers
+    const handleOnSelect = (player: IPlayer) => {
+        onSelect && onSelect(player)
+    }
+
+    const handleOnClose = () => {
+        closePanel()
+        onClose()
     }
 
     return (
@@ -48,7 +54,7 @@ const SidePanel = ({ show, players, selected, setSelected }: ISidePanel) => {
                     <h2>Add Player</h2>
                     <div
                         className={s.closeIcon}
-                        onClick={() => closePanel()}
+                        onClick={() => handleOnClose()}
                     >
                         <CloseIcon />
                     </div>
@@ -75,7 +81,7 @@ const SidePanel = ({ show, players, selected, setSelected }: ISidePanel) => {
                     { players.map((player, index) => {
                         return (
                             <div className={s.playerItem} key={`player-${player.name}`}
-                                onClick={() => selectPlayer(player)}
+                                onClick={() => handleOnSelect(player)}
                             >
                                 <p> { player.name }</p>
                                 <div className={`${s.playerItemIcon} ${ selectedPlayers.includes(player) && s.selected}`}>
@@ -89,7 +95,7 @@ const SidePanel = ({ show, players, selected, setSelected }: ISidePanel) => {
                     <Button
                         className={s.button}
                         onClick={() => {
-                            closePanel()
+                            handleOnClose()
                         }}
                     >
                         Done
